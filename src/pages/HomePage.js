@@ -1,6 +1,9 @@
+// Importa el contexto creado
 import { usePosts } from "../context/postContext"
 // Importa módulo para insertar el icono de pantalla vacía
 import { VscEmptyWindow } from 'react-icons/vsc'
+// Importa el componente Link que permite crear enlaces en distintos componentes de nuestra aplicación
+import { Link } from 'react-router-dom'
 
 export function HomePage () {
   const { posts } = usePosts()
@@ -16,6 +19,7 @@ export function HomePage () {
 
   return (
     <div className="text-white">
+      <Link to="/new">Nuevo Post</Link>
       {posts.map(post => (
         <div key = { post._id }>
           {post.title}

@@ -8,3 +8,7 @@ import axios from 'axios'
 export const getPostsRequest = async () => 
               await axios.get('/posts')
 
+/* Función que ejecuta axios para realizar peticiones post al servidor (crear nuevo post)  */
+export const createPostRequest = async (post) => 
+              await axios.post('/posts', post)    
+ 
