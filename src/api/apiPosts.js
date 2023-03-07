@@ -5,6 +5,6 @@ import axios from 'axios'
  facilitando el proceso de deploy y cambio de url, nuevo dominio */
 
 /* Función que ejecuta axios para realizar peticiones get al servidor (obtener todos los posts) */
-export const getPostsRequests = async () => 
+export const getPostsRequest = async () => 
               await axios.get('/posts')
 
