@@ -7,7 +7,8 @@ import {
 
 import {
     getPostsRequest,
-    createPostRequest
+    createPostRequest,
+    deletePostRequest
 } from '../api/apiPosts'
 
 const postContext = createContext()
@@ -39,8 +40,23 @@ export const PostProvider = ({ children }) => {
             setPosts([...posts, res.data]) 
         } catch (error) {
             console.error(error) 
+        }        
+    }
+
+     // Función que elimina un post a partir de un ID 
+     const deletePost = async (id) => {
+        try {
+            const res = await deletePostRequest(id)
+
+            /* Si la respuesta del server con el estado es 204 significa que se eliminó el post 
+             * setPosts actualiza el estado y almacenará y mostrará solo los posts que no coinciden con el _id eliminado */
+            if (res.status === 204) {
+            setPosts(posts.filter((post) => post._id !== id)) 
+        }   
+        } catch (error) {
+            console.error(error)
         }
-        
+             
     }
 
     useEffect(() => {
@@ -50,7 +66,8 @@ export const PostProvider = ({ children }) => {
     return <postContext.Provider value={ {
         posts,
         getPosts,
-        createPost
+        createPost,
+        deletePost
     }}>
         {children }
     </postContext.Provider>

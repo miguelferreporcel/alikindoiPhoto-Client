@@ -1,6 +1,9 @@
 import { HomePage, PostFormPage, NotFoundPage } from './pages'
 import { Routes, Route } from 'react-router-dom'
 import { PostProvider } from './context/postContext'
+// Importa el componente Toaster empleado para implementar notificaciones al realizar acciones
+import { Toaster } from 'react-hot-toast'
+
 function App() {
   return (
     <div className='bg-neutral-900 min-h-screen flex items-center'>
@@ -12,6 +15,8 @@ function App() {
             <Route path = '/posts/:id' element = { <PostFormPage />} />
             <Route path = '*' element = { <NotFoundPage />} />
           </Routes>
+          {/* Notificación en principio oculta */}
+          <Toaster />
         </PostProvider>
         
       </div>      
