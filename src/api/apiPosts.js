@@ -19,3 +19,8 @@ export const deletePostRequest = async id =>
 /* Función que ejecuta axios para realizar peticiones get al servidor (un solo post, editar post por ID) */
 export const getPostRequest = async id => 
               await axios.get('/posts/' + id)
+
+/* Función que ejecuta axios para realizar peticiones put al servidor (actualizar post por ID) 
+ * `/posts/${id}` concatena el id a posts/ */
+ export const updatePostRequest = async (id, newFields) =>
+              await axios.put(`/posts/${id}`, newFields)

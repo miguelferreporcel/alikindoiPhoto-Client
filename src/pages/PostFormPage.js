@@ -7,7 +7,7 @@ import { useNavigate, useParams, Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 export function PostFormPage () {
-  const { createPost, getPost } = usePosts()
+  const { createPost, getPost, updatePost } = usePosts()
   const navigate = useNavigate()
   const params = useParams()
   const [post, setPost] = useState({
@@ -37,6 +37,8 @@ export function PostFormPage () {
             Cancelar
           </Link>
          </header>
+
+        {/* Creación del formulario */} 
         <Formik
           initialValues={post}        
 
@@ -47,7 +49,11 @@ export function PostFormPage () {
           })}
 
           onSubmit= { async (values, actions) => {
-            await createPost(values) 
+            if (params.id) {
+              await updatePost(params.id, values)
+            } else {
+              await createPost(values)
+            } 
             navigate('/')
           }}
           enableReinitialize

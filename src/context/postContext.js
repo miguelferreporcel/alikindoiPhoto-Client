@@ -10,6 +10,7 @@ import {
     createPostRequest,
     deletePostRequest,
     getPostRequest,
+    updatePostRequest
 } from '../api/apiPosts'
 
 const postContext = createContext()
@@ -71,6 +72,16 @@ export const PostProvider = ({ children }) => {
         
     }
 
+    // Función que actualiza los datos de un post post a partir de un ID y retorna los datos
+    const updatePost = async (id, post) => {
+        try {
+            const res = await updatePostRequest(id, post)
+            setPosts(posts.map(post => post._id === id ? res.data : post)) 
+        } catch (error) {
+            console.error(error)
+        }        
+    }
+
     useEffect(() => {
         getPosts()
       }, [])
@@ -80,7 +91,8 @@ export const PostProvider = ({ children }) => {
         getPosts,
         createPost,
         deletePost,
-        getPost
+        getPost,
+        updatePost
     }}>
         {children }
     </postContext.Provider>
