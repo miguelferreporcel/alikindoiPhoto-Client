@@ -9,8 +9,23 @@ export const getPostsRequest = async () =>
               await axios.get('/posts')
 
 /* Función que ejecuta axios para realizar peticiones post al servidor (crear nuevo post)  */
-export const createPostRequest = async (post) => 
-              await axios.post('/posts', post)    
+export const createPostRequest = async (post) => {
+
+  /*  Formulario para introducción de datos */
+   const form = new FormData()
+  
+  // Recorre las claves del objeto post y añade su valor
+  for (let key in post) {
+    form.append(key, post[key]) 
+  }
+ 
+  // Retorna la respuesta
+  return await axios.post('/posts', form, {
+    headers: {
+      "Content-Type": "multipart/form-data"
+    }
+  })    
+ }  
 
 /* Función que ejecuta axios para realizar peticiones delete al servidor (borrar post por ID) */
 export const deletePostRequest = async id => 

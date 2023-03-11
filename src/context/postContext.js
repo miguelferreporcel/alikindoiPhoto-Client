@@ -1,3 +1,14 @@
+/**
+ * permite compartir funciones con todos los componentes que contenga
+ * createContext crea el contexto, useContext lo utiliza
+ * PostProvider componente que contendrá un estado que el resto de componentes van a poder consumir
+ * getPosts retornará las publicaciones del backend a través de axios y almacenarlas en la const posts
+ * res.data retorna los datos y los almacena en la función setPosts
+ * postContext.Provider selecciona las funciones a compartir con los hijos 
+ *  */ 
+
+/* El Hook useState es un Hook que permite añadir el estado de React a un componente funcional y sirve para manejar el estado de los elementos de un componente de manera que permite actualizar el estado de una variable y solo renderizar el tag html donde se lo use, de manera que cuando el estado cambia el componente responde volviendo a renderizar solo la parte del código afectada por la variable de estado mantenida por el hook useState. */
+
 import { 
     useState, 
     createContext, 
@@ -5,6 +16,7 @@ import {
     useEffect
 } from "react"
 
+//**Importa todas las funciones de la Api */
 import {
     getPostsRequest,
     createPostRequest,
@@ -13,6 +25,7 @@ import {
     updatePostRequest
 } from '../api/apiPosts'
 
+// contexto de las publicaciones
 const postContext = createContext()
 
 export const usePosts = () => {
@@ -82,6 +95,9 @@ export const PostProvider = ({ children }) => {
         }        
     }
 
+    
+    /* librería de JavaScript permite ejecutar fragmentos de código según el momento en el que se encuentre el ciclo de vida de nuestro componente    
+    cuando cargue el coponente ejecuta...getPosts  */
     useEffect(() => {
         getPosts()
       }, [])
