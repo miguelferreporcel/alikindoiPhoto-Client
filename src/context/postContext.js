@@ -8,7 +8,8 @@ import {
 import {
     getPostsRequest,
     createPostRequest,
-    deletePostRequest
+    deletePostRequest,
+    getPostRequest,
 } from '../api/apiPosts'
 
 const postContext = createContext()
@@ -59,6 +60,17 @@ export const PostProvider = ({ children }) => {
              
     }
 
+    // Función que obtiene un único post a partir de un ID y retorna los datos
+    const getPost = async (id) => {
+        try {
+            const res = await getPostRequest(id)
+            return res.data  
+        } catch (error) {
+            console.error(error) 
+        }
+        
+    }
+
     useEffect(() => {
         getPosts()
       }, [])
@@ -67,7 +79,8 @@ export const PostProvider = ({ children }) => {
         posts,
         getPosts,
         createPost,
-        deletePost
+        deletePost,
+        getPost
     }}>
         {children }
     </postContext.Provider>
