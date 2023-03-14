@@ -40,7 +40,8 @@ export function HomePage () {
   }
 
   return (
-    <div>      
+    <div> 
+      <br />     
     {/* Cabecera de la página: Muestra número de posts y enlace a crear nuevo post*/}
       <header className="bg-blue-500 flex justify-between py-4 px-4">
         <h1 className="text-2xl text-gray-300 font-bold">Posts ({(posts.length)}) </h1>
