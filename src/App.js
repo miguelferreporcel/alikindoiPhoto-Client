@@ -14,7 +14,7 @@ import { Toaster } from 'react-hot-toast'
 function App() {
   return (
     <div className='bg-neutral-900 min-h-screen flex items-center'>
-      <div className='px-10 container'>
+      <div className='px-4 py-container'>
         <PostProvider>
           <Routes>
 

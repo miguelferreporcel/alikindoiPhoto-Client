@@ -54,7 +54,7 @@ export function HomePage () {
       <br /><br />
 
       {/* Pie de la página que contiene enlaces a redes sociales blogger e instagram */}
-      <footer className="flex bg-blue-500">
+      <footer className="flex bg-blue-500 justify-center">
         <div className="px-10 py-1">
           <h1 className="text-2xl font-bold px-2 py-3 rounded-full">© alikindoiPhoto 2023 </h1>
         </div>            
