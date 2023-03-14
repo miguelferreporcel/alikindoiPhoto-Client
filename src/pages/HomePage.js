@@ -5,7 +5,7 @@ import { usePosts } from "../context/postContext"
 import { VscEmptyWindow } from 'react-icons/vsc'
 
 // Importa módulo para insertar el icono de blogger
-import { ImBlogger2 } from 'react-icons/im'
+import { ImBlogger } from 'react-icons/im'
 
 // Importa el componente Link que permite crear enlaces en distintos componentes de nuestra aplicación
 import { Link } from 'react-router-dom'
@@ -40,10 +40,9 @@ export function HomePage () {
   }
 
   return (
-    <div> 
-      <br />     
+    <div className="py-4">    
     {/* Cabecera de la página: Muestra número de posts y enlace a crear nuevo post*/}
-      <header className="bg-blue-500 flex justify-between py-4 px-4">
+      <header className="bg-blue-500 flex justify-between py-4 px-4 sticky top-0 z-30 w-full">
         <h1 className="text-2xl text-gray-300 font-bold">Posts ({(posts.length)}) </h1>
         <h1 className="text-2xl text-gray-900 font-bold">alikindoiPhoto</h1>
         <Link to = '/new' className="px-2 py-2 bg-green-600 hover:bg-indigo-600 text-white rounded-md">Nuevo post</Link>
@@ -54,17 +53,17 @@ export function HomePage () {
       <br /><br />
 
       {/* Pie de la página que contiene enlaces a redes sociales blogger e instagram */}
-      <footer className="flex bg-blue-500 justify-center">
+      <footer className="flex bg-gray-800 justify-center">
         <div className="px-10 py-1">
-          <h1 className="text-2xl font-bold px-2 py-3 rounded-full">© alikindoiPhoto 2023 </h1>
+          <h1 className="text-2xl text-white font-bold px-2 py-3 rounded-full">© alikindoiPhoto 2023 </h1>
         </div>            
-        <div className="flex-none hover:bg-green-600 text-white py-3">
+        <div className="flex-none hover:bg-yellow-600 text-white py-3 px-5">
           <a href="https://alikindoi07.blogspot.com/" type="button" target="_blank" rel="noreferrer" 
             className="bg-green-500 text-2xl font-bold px-2 py-2">
-            < ImBlogger2 />    
+            < ImBlogger />    
           </a>
         </div>
-        <div className="flex-none px-10 py-3 hover:bg-yellow-600 text-white rounded-md">
+        <div className="flex-none px-5 py-3 hover:bg-yellow-600 text-white rounded-md">
           <a href="https://www.instagram.com/alikindoiphoto/" type="button" target="_blank" rel="noreferrer">        
             <button
               type="button"

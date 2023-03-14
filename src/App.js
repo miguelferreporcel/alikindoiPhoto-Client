@@ -13,8 +13,8 @@ import { Toaster } from 'react-hot-toast'
 // Definición de rutas de todas las páginas
 function App() {
   return (
-    <div className='bg-neutral-900 min-h-screen flex items-center'>
-      <div className='px-4 py-container'>
+    <div className='bg-neutral-900 min-h-screen  flex items-center'>
+      <div className='pxcontainer m-auto px-6'>
         <PostProvider>
           <Routes>
 

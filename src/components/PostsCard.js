@@ -21,7 +21,7 @@ export function PostCard ({ post }) {
     const handleDelete = (id) => {
         toast((t) => (
             <div>
-                <p className='text-white'>Estás seguro de Eliminar el post? {/* <strong>{id}</strong> */}</p>
+                <p className='text-white'>Estás seguro de Eliminar el post? </p>
                 <br />
                 <div className='flex col justify-center py-3'>   
                     {/* Al pulsar el botnón elimina el post y desaparece  */}                  
@@ -83,11 +83,8 @@ export function PostCard ({ post }) {
                 <p>{ post.description }</p>                   
             </div> 
             <div className='hover:cursor-pointer transform hover:scale-[1.3] transition duration-500 ease-out hover:ease-in'>
-               {post.image && <img src={post.image.url}  alt= "img" className="w-3/4 h-3/4 m-auto py-6" />}   
-               
-            </div>
-
-                   
+               {post.image && <img src={post.image.url}  alt= "img" className="w-3/4 h-3/4 m-auto py-6" />}                  
+            </div>                   
         </div>
     )
 }
