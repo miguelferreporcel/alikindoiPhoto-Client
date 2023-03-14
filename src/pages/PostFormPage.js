@@ -56,8 +56,8 @@ export function PostFormPage () {
 
           /* Validar los datos introducidos y asegurar su inserción en el formulario*/
           validationSchema = { Yup.object({
-            title: Yup.string().required('Título es requerido'),
-            description: Yup.string().required('Descripción es requerida'),
+            title: Yup.string().required('El título es requerido'),
+            description: Yup.string().required('La descripción es requerida'),
             image: Yup.mixed().nullable(true).required("La imagen es requerida") 
             //mixed() indica que se aceptaran todos los tipos y el nullable indica que como la imagen fue marcada como null desde un principio entonces tratara de manejar si es anuable o no mediante los booleanos true y false
           })}
@@ -92,7 +92,7 @@ export function PostFormPage () {
               </label>
                   <Field  name = 'title' 
                           placeholder = "título" 
-                          className = 'px-3 focus:outline-none rounded bg-gray-600 text-white w-full mb-4'
+                          className = 'px-3 focus:outline-none rounded bg-gray-300 text-black w-full mb-5'
                   />
                   <ErrorMessage component="p" className='text-red-400 text-sm' name = 'title' />
               <label  
@@ -105,7 +105,7 @@ export function PostFormPage () {
                     component = "textarea"
                     name = 'description' 
                     placeholder = "descripción" 
-                    className = 'px-3 focus:outline-none rounded bg-gray-600 text-white w-full'
+                    className = 'px-3 focus:outline-none rounded bg-gray-300 text-black w-full mb-3'
                     rows = {3}
                   />
                   <ErrorMessage component="p" className='text-red-400 text-sm' name = 'description' />
@@ -117,10 +117,10 @@ export function PostFormPage () {
               </label>
               <input type='file' 
                 name='image' 
-                className='px-3 py-2 focus:outline-none rounded bg-gray-600 text-white w-full'
+                className='px-3 py-2 focus:outline-none rounded bg-gray-500 text-white w-full'
                 onChange={(e) => setFieldValue('image', e.target.files[0])}
               />
-              <ErrorMessage component="p" className='text-red-400 text-sm' name = 'description' />
+              <ErrorMessage component="p" className='text-red-400 text-sm' name = 'image' />
               
               {/* Botón que envía el formulario, si está enviando muestra la animación de carga */}
               <button type = "submit" 
