@@ -53,8 +53,11 @@ export function HomePage () {
       <br /><br />
 
       {/* Pie de la página que contiene enlaces a redes sociales blogger e instagram */}
-      <footer className="flex bg-blue-500">        
-        <div className="flex-none hover:bg-green-600 text-white px-10 py-3">
+      <footer className="flex bg-blue-500">
+        <div className="px-10 py-1">
+          <h1 className="text-2xl font-bold px-2 py-3 rounded-full">© alikindoiPhoto 2023 </h1>
+        </div>            
+        <div className="flex-none hover:bg-green-600 text-white py-3">
           <a href="https://alikindoi07.blogspot.com/" type="button" target="_blank" rel="noreferrer" 
             className="bg-green-500 text-2xl font-bold px-2 py-2">
             < ImBlogger2 />    
@@ -81,9 +84,7 @@ export function HomePage () {
             </button>       
           </a>
         </div> 
-        <div className="px-20">
-          <h1 className="text-2xl font-bold px-2 py-3 rounded-full">© alikindoiPhoto 2023 </h1>
-        </div>                
+                    
       </footer>  
       {/* Elemento para subir al top de la página */}
       <div>
