@@ -1,16 +1,7 @@
 export function NotFoundPage () {
   return (
     <div
-      class="
-        flex
-        items-center
-        justify-center
-        w-screen
-        h-screen
-        bg-gradient-to-r
-        from-indigo-600
-        to-blue-400
-      "
+      class="flex items-center justify-center"
       >
       <div class="px-40 py-20 bg-white rounded-md shadow-xl">
         <div class="flex flex-col items-center">
@@ -20,8 +11,8 @@ export function NotFoundPage () {
             <span class="text-red-500">Oops!</span> Page not found
           </h6>
 
-          <p class="mb-8 text-center text-gray-500 md:text-lg">
-            The page you’re looking for doesn’t exist.
+          <p class="mb-8 text-center text-gray-500 text-bold md:text-lg">
+            La página que buscas no existe.
           </p>
 
           <a
