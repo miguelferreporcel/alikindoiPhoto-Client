@@ -1,23 +1,23 @@
 export function NotFoundPage () {
   return (
     <div
-      class="flex items-center justify-center"
+      className="flex items-center justify-center"
       >
-      <div class="px-40 py-20 bg-white rounded-md shadow-xl">
-        <div class="flex flex-col items-center">
-          <h1 class="font-bold text-blue-600 text-9xl">404</h1>
+      <div className="px-40 py-20 bg-white rounded-md shadow-xl">
+        <div className="flex flex-col items-center">
+          <h1 className="font-bold text-blue-600 text-9xl">404</h1>
 
-          <h6 class="mb-2 text-2xl font-bold text-center text-gray-800 md:text-3xl">
-            <span class="text-red-500">Oops!</span> Page not found
+          <h6 className="mb-2 text-2xl font-bold text-center text-gray-800 md:text-3xl">
+            <span className="text-red-500">Oops!</span> Page not found
           </h6>
 
-          <p class="mb-8 text-center text-gray-500 text-bold md:text-lg">
+          <p className="mb-8 text-center text-gray-500 text-bold md:text-lg">
             La página que buscas no existe.
           </p>
 
           <a
             href="/"
-            class="px-6 py-2 text-sm font-semibold text-blue-800 bg-blue-100"
+            className="px-6 py-2 text-sm font-semibold text-blue-800 bg-blue-100"
             >Go home</a
           >
         </div>
