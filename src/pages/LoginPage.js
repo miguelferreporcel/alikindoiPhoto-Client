@@ -2,15 +2,13 @@ import Logo  from '../assets/logo.gif'
 import showPwdImg from '../assets/showPassword.svg'
 import hidePwdImg from '../assets/hidePassword.svg'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-
 export function LoginPage() {
 
   // Permite la navegación entre páginas
+
+  const [loggedIn, setLoggedIn] = useState("false")
   const [userName, setUserName] = useState("")
   const [pass, setPass] = useState("")
-  const [error, setError] = useState(false)
-  const navigate = useNavigate
   
   const [isPassVisible, setIsPassVisible] = useState(false);
 
@@ -23,16 +21,19 @@ export function LoginPage() {
 
   const handleSubmit =  (e) => {
     e.preventDefault()
-
     if(userName === "" || pass === "") {
-      setError(true)
-      return
+      alert("Usuario y Contraseña son requeridos")
+    }else if(userName === "admin" && pass === "alikindoi"){
+      setLoggedIn(true)
+      console.log('User: '+ userName + ' Pass: '+ pass)  
+    }else {
+      setLoggedIn(false)
+      
+      console.log('User: ' + userName  + ' Pass: ' + pass) 
+      alert("El usuario y/o la contraseña no son válidos") 
     }
-      setError(false)
-    }
-  
-
-
+      
+  }
 
   return (
     <div className="flex items-center justify-center min-w-full">
@@ -63,6 +64,7 @@ export function LoginPage() {
                 w-full p-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
                 dark:text-white hover:bg-gray-500" 
                 type="text" 
+                id="userName"
                 value={userName}                
                 placeholder="Usuario" 
                 onChange={ (e) => setUserName(e.target.value) }
@@ -84,6 +86,7 @@ export function LoginPage() {
                             dark:text-white hover:bg-gray-500"
                   placeholder="Contraseña"
                   type={isRevealPass ? "text" : "password"}
+                  id="pass"
                   value={pass}
                   onChange={ (e) => setPass(e.target.value) }
                 />
@@ -138,11 +141,6 @@ export function LoginPage() {
               Acceder
             </button>
           </form>
-          {error && 
-            <p className='ml-3 text-xl text-red-300 text-center'>
-              * Introduce Usuario y Contraseña
-            </p>
-          }
         </div>
       </div>
     </div>

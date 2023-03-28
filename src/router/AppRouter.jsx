@@ -4,9 +4,6 @@ import { HomePage, PostFormPage, NotFoundPage, LoginPage } from '../pages'
 // Importa Componentes Routes y Route para definir y crear rutas
 import { Routes, Route } from 'react-router-dom'
 
-// Importa el componente para dar acceso a las rutas privadas
-import { PrivateRoute } from './PrivateRoute'
-
 export const AppRouter = () => {
   return (
     <Routes>
