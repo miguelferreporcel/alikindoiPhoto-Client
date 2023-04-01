@@ -6,32 +6,21 @@ export function LoginPage() {
 
   // Permite la navegación entre páginas
 
-  const [loggedIn, setLoggedIn] = useState("false")
-  const [userName, setUserName] = useState("")
-  const [pass, setPass] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
   
-  const [isPassVisible, setIsPassVisible] = useState(false);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   function togglePasswordVisibility() {
-    setIsPassVisible((prevState) => !prevState);
+    setIsPasswordVisible((prevState) => !prevState);
   }
 
  
-  const [isRevealPass, setIsRevealPass] = useState(false);
+  const [isRevealPassword, setIsRevealPassword] = useState(false);
 
-  const handleSubmit =  (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault()
-    if(userName === "" || pass === "") {
-      alert("Usuario y Contraseña son requeridos")
-    }else if(userName === "admin" && pass === "alikindoi"){
-      setLoggedIn(true)
-      console.log('User: '+ userName + ' Pass: '+ pass)  
-    }else {
-      setLoggedIn(false)
-      
-      console.log('User: ' + userName  + ' Pass: ' + pass) 
-      alert("El usuario y/o la contraseña no son válidos") 
-    }
+    console.log('is submiting')
       
   }
 
@@ -42,7 +31,7 @@ export function LoginPage() {
           <form 
             id="formLogin"
             className="space-y-4 md:space-y-6" 
-            onSubmit={handleSubmit}
+            onSubmit={handleLogin}
           >
             <div className="flex items-center justify-center">
               <img src={Logo} width = "100px" alt="logo" />
@@ -56,18 +45,18 @@ export function LoginPage() {
                 htmlFor="user" 
                 className="block mb-2 text-xl text-gray-900 dark:text-white"
               >
-                Usuario
+                Email
               </label>
               <input 
                 className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-xl 
                 rounded-lg focus:ring-primary-600 focus:border-primary-600 block 
                 w-full p-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
                 dark:text-white hover:bg-gray-500" 
-                type="text" 
-                id="userName"
-                value={userName}                
-                placeholder="Usuario" 
-                onChange={ (e) => setUserName(e.target.value) }
+                type="email" 
+                id="email"
+                value={email}                
+                placeholder="example@example.com" 
+                onChange={ (e) => setEmail(e.target.value) }
                 /* required  */
               />
             </div>
@@ -76,7 +65,7 @@ export function LoginPage() {
                 htmlFor="password" 
                 className="block mb-2 text-xl text-gray-900 dark:text-white"
               >
-                Contraseña
+                Password
               </label>
               <div className="flex items-stretch">
                 <input
@@ -84,11 +73,11 @@ export function LoginPage() {
                             rounded-lg focus:ring-primary-600 focus:border-primary-600 block 
                             p-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
                             dark:text-white hover:bg-gray-500"
-                  placeholder="Contraseña"
-                  type={isRevealPass ? "text" : "password"}
-                  id="pass"
-                  value={pass}
-                  onChange={ (e) => setPass(e.target.value) }
+                  placeholder="password"
+                  type={isRevealPassword ? "text" : "password"}
+                  id="password"
+                  value={password}
+                  onChange={ (e) => setPassword(e.target.value) }
                 />
                 <img
                   width = "60px"
@@ -96,9 +85,9 @@ export function LoginPage() {
                             rounded-lg focus:ring-primary-600 focus:border-primary-600 block 
                             p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
                             hover:bg-gray-500"
-                  title={isRevealPass ? "Hide password" : "Show password"}
-                  src={isRevealPass ? hidePwdImg : showPwdImg}
-                  onClick={() => setIsRevealPass(prevState => !prevState)}
+                  title={isRevealPassword ? "Hide password" : "Show password"}
+                  src={isRevealPassword ? hidePwdImg : showPwdImg}
+                  onClick={() => setIsRevealPassword(prevState => !prevState)}
                 />
               </div>
             </div>
