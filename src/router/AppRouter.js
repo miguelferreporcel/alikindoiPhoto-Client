@@ -12,14 +12,10 @@ export const AppRouter = () => {
        */}
             
       <Route path='/' element = { <LoginPage />} />
-          
-          <Route path = '/home' element = { <HomePage />} />
-          <Route path = '/new' element = { <PostFormPage />} />
-          <Route path = '/posts/:id' element = { <PostFormPage />} />      
-     
-      <Route path = '*' element = { <NotFoundPage />} />
-
-            
+      <Route path = '/home' element = { <HomePage />} />
+      <Route path = '/new' element = { <PostFormPage />} />
+      <Route path = '/posts/:id' element = { <PostFormPage />} />      
+      <Route path = '*' element = { <NotFoundPage />} />           
             
     </Routes>
   )
