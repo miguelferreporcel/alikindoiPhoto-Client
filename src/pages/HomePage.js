@@ -16,7 +16,9 @@ import { PostCard } from "../components/PostsCard"
 // Importa ScrollToTop Componente que permite crear un acceso a la parte superior de las páginas 
 import ScrollToTop from "react-scroll-to-top"
 
+
 export function HomePage () {
+
   const { posts } = usePosts()
   
   const renderMain = () => {

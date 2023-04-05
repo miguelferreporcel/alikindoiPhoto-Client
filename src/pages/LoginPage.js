@@ -2,12 +2,16 @@ import Logo  from '../assets/logo.gif'
 import showPwdImg from '../assets/showPassword.svg'
 import hidePwdImg from '../assets/hidePassword.svg'
 import { useState } from 'react'
+import loginService from '../api/apiLogin'
+
 export function LoginPage() {
 
   // Permite la navegación entre páginas
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [user, setUser] = useState(null)
+  const [errorMessage, setErrorMessage] = useState(null)
   
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
@@ -20,7 +24,18 @@ export function LoginPage() {
 
   const handleLogin = async (e) => {
     e.preventDefault()
-    console.log('is submiting')
+    try {
+      const user = await loginService.login({
+      email,
+      password
+    })
+    console.log(user)
+    setUser(user)
+    setEmail('')
+    setPassword('')
+    } catch (error) { 
+      console.log(error)
+    }
       
   }
 
