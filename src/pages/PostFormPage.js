@@ -37,13 +37,13 @@ export function PostFormPage () {
   }, [params.id])
 
   return (
-    <div className='flex items-center justify-center'>
+    <div className='flex items-center justify-center min-h-screen'>
       <div className='bg-zinc-800 p-10 shadow-md shadow-black'>
         <header className='flex justify-between items-center py-4 text-white'>
           <h3 className='text-xl'>
             Post
           </h3>
-          <Link to= '/' className='bg-red-700 text-white font-bold hover:bg-red-500 px-2 py-2'>
+          <Link to= '/home' className='bg-red-700 text-white font-bold hover:bg-red-500 px-2 py-2'>
             Cancelar
           </Link>
         </header>
@@ -75,7 +75,7 @@ export function PostFormPage () {
             }
             // Al acabar de enviar se pasa a false para que no muestre la animación de carga de post
             actions.setSubmitting(false) 
-            navigate('/')
+            navigate('/home')
           }}
 
           /* Controla si se tiene que restablecer el formulario si cambia initialValues
@@ -108,7 +108,11 @@ export function PostFormPage () {
                     className = 'px-3 focus:outline-none rounded bg-gray-300 text-black w-full mb-3'
                     rows = {3}
                   />
-                  <ErrorMessage component="p" className='text-red-400 text-sm' name = 'description' />
+                  <ErrorMessage 
+                    component="p" 
+                    className='text-red-400 text-sm' 
+                    name = 'description' 
+                  />
               <label 
                 htmlFor='image'
                 className='text-sm block font-bold text-gray-400'

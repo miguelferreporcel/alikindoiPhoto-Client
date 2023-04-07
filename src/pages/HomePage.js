@@ -44,10 +44,14 @@ export function HomePage () {
   return (
     <div className="py-4">    
     {/* Cabecera de la página: Muestra número de posts y enlace a crear nuevo post*/}
-      <header className="bg-blue-500 flex justify-between py-4 px-4 sticky top-0 z-30 w-full">
+      <header className="flex justify-around sticky top-0 z-30 w-full">
         <h1 className="text-2xl text-gray-300 font-bold">Posts ({(posts.length)}) </h1>
-        <h1 className="text-2xl text-gray-900 font-bold">alikindoiPhoto</h1>
-        <Link to = '/new' className="px-2 py-2 bg-green-600 hover:bg-green-500 text-white rounded-md">Nuevo post</Link>
+        <Link 
+          to = '/new' 
+          className="px-2 py-2 bg-green-600 hover:bg-green-500 text-white rounded-md"
+        >
+          Nuevo post
+        </Link>
       </header> 
 
       {renderMain()} 

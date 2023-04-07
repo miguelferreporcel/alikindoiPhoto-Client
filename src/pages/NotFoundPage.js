@@ -1,9 +1,7 @@
 export function NotFoundPage () {
   return (
-    <div
-      className="flex items-center justify-center"
-      >
-      <div className="px-40 py-20 bg-white rounded-md shadow-xl">
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="px-20 py-20 bg-white rounded-md shadow-xl">
         <div className="flex flex-col items-center">
           <h1 className="font-bold text-blue-600 text-9xl">404</h1>
 

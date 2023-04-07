@@ -3,6 +3,7 @@ import showPwdImg from '../assets/showPassword.svg'
 import hidePwdImg from '../assets/hidePassword.svg'
 import { useState } from 'react'
 import loginService from '../api/apiLogin'
+import { Link, useNavigate } from 'react-router-dom'
 
 export function LoginPage() {
 
@@ -21,6 +22,7 @@ export function LoginPage() {
 
  
   const [isRevealPassword, setIsRevealPassword] = useState(false);
+  const navigate = useNavigate
 
   const handleLogin = async (e) => {
     e.preventDefault()
@@ -29,8 +31,8 @@ export function LoginPage() {
       email,
       password
     })
-    console.log(user)
     setUser(user)
+    console.log(user)
     setEmail('')
     setPassword('')
     } catch (error) { 
@@ -40,7 +42,7 @@ export function LoginPage() {
   }
 
   return (
-    <div className="flex items-center justify-center min-w-full">
+    <div className="flex items-center justify-center min-h-screen">
       <div className=" bg-white rounded-lg shadow dark:border dark:bg-zinc-800 dark:border-gray-700">
         <div className="p-6 space-y-4 md:space-y-3 sm:p-10">
           <form 
@@ -145,6 +147,11 @@ export function LoginPage() {
               Acceder
             </button>
           </form>
+          
+        </div>
+        <div 
+          className="text-gray-300 text-xl font-bold text-center py-2 bg-zinc-700 hover:bg-zinc-600 ">
+          <Link to='/'>Cancelar</Link>
         </div>
       </div>
     </div>
