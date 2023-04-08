@@ -18,6 +18,7 @@ import ScrollToTop from "react-scroll-to-top"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSquarePlus } from "@fortawesome/free-solid-svg-icons"
+import { faImage } from "@fortawesome/free-solid-svg-icons"
 
 
 
@@ -48,11 +49,16 @@ export function PostsPage () {
   return (
     <div className="py-4">    
     {/* Cabecera de la página: Muestra número de posts y enlace a crear nuevo post*/}
-      <header className="flex justify-around sticky top-0 z-30 w-full border-b py-2">
-        <h1 className="text-2xl text-gray-300 font-bold">Posts ({(posts.length)}) </h1>
+      <header className="flex justify-around sticky top-0 z-30 w-full py-2">
+        <h1 
+          className="text-2xl text-gray-300 font-bold"
+        >
+          <FontAwesomeIcon icon={faImage} /> Posts 
+          ({(posts.length)}) 
+        </h1>
         <Link 
           to = '/dash/new' 
-          className=" text-gray-300 text-xl font-bold rounded-md"
+          className=" text-gray-300 text-2xl font-bold rounded-md"
         >
         <FontAwesomeIcon icon={faSquarePlus} /> Nuevo post
         </Link>

@@ -4,6 +4,11 @@ import hidePwdImg from '../assets/hidePassword.svg'
 import { useState } from 'react'
 import loginService from '../api/apiLogin'
 import { Link, useNavigate } from 'react-router-dom'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+import { faLock } from "@fortawesome/free-solid-svg-icons"
+import { faRightToBracket } from "@fortawesome/free-solid-svg-icons"
+import { faRectangleXmark } from "@fortawesome/free-solid-svg-icons"
 
 export function LoginPage() {
 
@@ -62,7 +67,7 @@ export function LoginPage() {
                 htmlFor="user" 
                 className="block mb-2 text-xl text-gray-900 dark:text-white"
               >
-                Email
+                <FontAwesomeIcon icon={faEnvelope}  /> Email
               </label>
               <input 
                 className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-xl 
@@ -82,7 +87,7 @@ export function LoginPage() {
                 htmlFor="password" 
                 className="block mb-2 text-xl text-gray-900 dark:text-white"
               >
-                Password
+                <FontAwesomeIcon icon={faLock}  /> Password
               </label>
               <div className="flex items-stretch">
                 <input
@@ -144,14 +149,16 @@ export function LoginPage() {
               className="w-full text-white bg-green-600 rounded-lg text-2xl px-5 py-2.5 
                         text-center hover:bg-green-500"
             >
-              Acceder
+              <FontAwesomeIcon icon={faRightToBracket}  /> Acceder
             </button>
           </form>
           
         </div>
         <div 
           className="text-gray-300 text-xl font-bold text-center py-2 bg-zinc-700 hover:bg-zinc-600 ">
-          <Link to='/'>Cancelar</Link>
+          <Link to='/'>
+            <FontAwesomeIcon icon={faRectangleXmark}  /> Cancelar
+          </Link>
         </div>
       </div>
     </div>

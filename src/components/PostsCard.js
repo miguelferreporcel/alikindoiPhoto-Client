@@ -7,6 +7,10 @@ import { usePosts } from '../context/postContext'
 // Módulo para la navegación entre páginas de la aplicación
 import { useNavigate } from 'react-router-dom' 
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
+
 // Función que recibe un objeto post para poder mostrarlo (post.title, post.description...)
 export function PostCard ({ post }) {
 
@@ -61,7 +65,7 @@ export function PostCard ({ post }) {
                         className="bg-yellow-600 text-sm px-2 py-1 rounded-sm hover:bg-yellow-500 "
                         onClick={() => navigate(`/dash/posts/${post._id}`)}
                     >
-                        Editar
+                        <FontAwesomeIcon icon={faPenToSquare} /> Editar
                     </button>
 
                     {/* Al pulsar Delete llama a la función handledelete que lanza el toast y completa la acción */}
@@ -72,7 +76,7 @@ export function PostCard ({ post }) {
                             handleDelete(post._id)
                         }}
                     >
-                        Eliminar
+                        <FontAwesomeIcon icon={faTrash} /> Eliminar
                     </button>
                 </div> 
                  <div className="flex justify-start">

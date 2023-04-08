@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHouse } from "@fortawesome/free-solid-svg-icons"
+import { faUserLarge } from "@fortawesome/free-solid-svg-icons"
 import { useNavigate, useLocation } from 'react-router-dom'
 
 export function DashFooter() {
@@ -24,7 +25,7 @@ export function DashFooter() {
   return(
     <div className="font-medium sticky bottom-0  text-white flex flex-nowrap justify-start px-4 py-4 gap-10">
       {goHomeButton}
-      <p>Current User:</p>
+      <p><FontAwesomeIcon icon={faUserLarge}  /> Current User:</p>
     </div>
   )
 }
