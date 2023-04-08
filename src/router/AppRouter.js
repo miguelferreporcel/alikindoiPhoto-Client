@@ -1,5 +1,14 @@
 // Importa las funciones que definen las páginas
-import { PostsPage, PostFormPage, NotFoundPage, LoginPage, PublicPage, WellcomePage, UsersPage } from '../pages'
+import { 
+  PostsPage, 
+  PostFormPage, 
+  NotFoundPage, 
+  LoginPage, 
+  PublicPage, 
+  WellcomePage, 
+  UsersPage,
+  UserFormPage 
+} from '../pages'
 import { Layout } from '../layouts/Layout'
 import { DashLayout } from '../layouts/DashLayout'
 
@@ -20,7 +29,8 @@ export const AppRouter = () => {
           <Route path = 'posts' element = { <PostsPage />} />
           <Route path = 'new' element = { <PostFormPage />} />
           <Route path = 'posts/:id' element = { <PostFormPage />} />
-          <Route path = 'users' element = { <UsersPage />} /> 
+          <Route path = 'users' element = { <UsersPage />} />
+          <Route path = 'newUser' element = { <UserFormPage />} /> 
         </Route> // End /dash  
       </Route> // End /layout   
       <Route path = '*' element = { <NotFoundPage />} />     

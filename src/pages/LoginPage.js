@@ -9,6 +9,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import { faLock } from "@fortawesome/free-solid-svg-icons"
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons"
 import { faRectangleXmark } from "@fortawesome/free-solid-svg-icons"
+import { faBell } from "@fortawesome/free-solid-svg-icons"
 
 export function LoginPage() {
 
@@ -129,7 +130,7 @@ export function LoginPage() {
                     htmlFor="remember" 
                     className="text-gray-300"
                   >
-                    Recuérdame
+                    <FontAwesomeIcon icon={faBell}  /> Recuérdame
                   </label>
                 </div>
               </div>                          
