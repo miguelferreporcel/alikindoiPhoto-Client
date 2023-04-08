@@ -86,9 +86,9 @@ export const UserProvider = ({ children }) => {
   }
 
   // Función que actualiza los datos de un post post a partir de un ID y retorna los datos
-  const updateUser = async (id, post) => {
+  const updateUser = async (id, user) => {
       try {
-          const res = await updateUserRequest(id, post)
+          const res = await updateUserRequest(id, user)
           setUsers(users.map(user => user._id === id ? res.data : user)) 
       } catch (error) {
           console.error(error)

@@ -28,7 +28,7 @@ export function UserFormPage () {
 
 /*   Si params contiene ID ejecutará getPost (obtener un único post) con el id indicado y lo guarda en el estado 'post' declarado en la límea 23 */
   useEffect(() => {
-    (async() =>{
+    (async() => {
       if (params.id) {
         const user = await getUser(params.id)
         setUser(user)
@@ -43,7 +43,7 @@ export function UserFormPage () {
           <h3 className='text-xl'>
             Usuario
           </h3>
-          <Link to= '/home' className='bg-red-700 text-white font-bold hover:bg-red-500 px-2 py-2'>
+          <Link to= '/dash/users' className='bg-red-700 text-white font-bold hover:bg-red-500 px-2 py-2'>
             Cancelar
           </Link>
         </header>
@@ -62,9 +62,9 @@ export function UserFormPage () {
               .required('El email es requerido')
               .email('Email no válido'),
             password: Yup.string()
-            .min(5, `Mínimo 5 caracteres`)
-            .required("La contraseña es requerida") 
-            
+              .min(5, `Mínimo 5 caracteres`)
+              .nullable(true)
+              .required('La contraseña es requerida')
           })}
 
           /* Al enviar recibe values (valores introducidos) y actions(updatePosts, createPosts) 
@@ -87,7 +87,7 @@ export function UserFormPage () {
            * Permitirá mostrar los valores de un post al pulsar en editar y así poder modificarlos */
           enableReinitialize
         >
-          {({ handleSubmit, setFieldValue, isSubmitting }) => (
+          {({ handleSubmit, isSubmitting }) => (
             <Form onSubmit={ handleSubmit }>
               <label  
                 htmlFor='username'
@@ -122,9 +122,11 @@ export function UserFormPage () {
               >
                 Contraseña
               </label>
-                  <Field  name = 'password'
-                          type = 'password' 
-                          className = 'px-3 focus:outline-none rounded bg-gray-300 text-black w-full mb-5'
+                  <Field  
+                    name = 'password'
+                    type = 'password'
+                    placeholder = '**********'
+                    className = 'px-3 focus:outline-none rounded bg-gray-300 text-black w-full mb-5'
                   />
                   <ErrorMessage component="p" className='text-red-400 text-sm' name = 'password' />
               

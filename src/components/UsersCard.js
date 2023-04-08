@@ -28,7 +28,7 @@ export function UsersCard ({ user }) {
                 <p className='text-white'>Estás seguro de Eliminar el usuario? </p>
                 <br />
                 <div className='flex col justify-center py-3'>   
-                    {/* Al pulsar el botnón elimina el post y desaparece  */}                  
+                    {/* Al pulsar el botnón elimina el usuario y desaparece  */}                  
                     <button 
                         className='bg-red-500 hover:bg-red-400 px-3 py-2 text-sm text-white rounded-sm mx-2'
                         onClick={() => {
@@ -60,7 +60,7 @@ export function UsersCard ({ user }) {
             <div className="px-4 py-7">
                 <div className="flex justify-end gap-3">
 
-                    {/* Al pulsar edit reditige a posts y muestra (reutiliza) el formulario de crear post  para modificar datos del post con el id especificado */}
+                    {/* Al pulsar edit reditige a posts y muestra (reutiliza) el formulario de crear usuario  para modificar datos del usuario con el id especificado */}
                     <button 
                         className="bg-yellow-600 text-sm px-2 py-1 rounded-sm hover:bg-yellow-500 "
                         onClick={() => navigate(`/dash/users/${user._id}`)}
