@@ -1,5 +1,7 @@
 // Importa las funciones que definen las páginas
-import { HomePage, PostFormPage, NotFoundPage, LoginPage } from '../pages'
+import { PostsPage, PostFormPage, NotFoundPage, LoginPage, PublicPage, WellcomePage, UsersPage } from '../pages'
+import { Layout } from '../layouts/Layout'
+import { DashLayout } from '../layouts/DashLayout'
 
 // Importa Componentes Routes y Route para definir y crear rutas
 import { Routes, Route } from 'react-router-dom'
@@ -10,13 +12,19 @@ export const AppRouter = () => {
       {/* react pide que las rutas estén dentro de un <BrowserRouter /> esto se hace en index.js 
        * <BrowserRouter> <App /> </BrowserRouter>
        */}
-            
-      <Route path='/' element = { <LoginPage />} />
-      <Route path = '/home' element = { <HomePage />} />
-      <Route path = '/new' element = { <PostFormPage />} />
-      <Route path = '/posts/:id' element = { <PostFormPage />} />      
-      <Route path = '*' element = { <NotFoundPage />} />           
-            
+      <Route path = '/' element = {<Layout />} >
+        <Route index element = {<PublicPage />} />
+        <Route path = 'login' element = { <LoginPage />} />
+        <Route path = '/dash' element = { <DashLayout />}>
+          <Route index element = { <WellcomePage />} />
+          <Route path = 'posts' element = { <PostsPage />} />
+          <Route path = 'new' element = { <PostFormPage />} />
+          <Route path = 'posts/:id' element = { <PostFormPage />} />
+          <Route path = 'users' element = { <UsersPage />} /> 
+        </Route> // End /dash  
+      </Route> // End /layout   
+      <Route path = '*' element = { <NotFoundPage />} />     
+
     </Routes>
   )
 }

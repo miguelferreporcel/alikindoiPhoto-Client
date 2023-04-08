@@ -58,15 +58,15 @@ export function PostCard ({ post }) {
 
                     {/* Al pulsar edit reditige a posts y muestra (reutiliza) el formulario de crear post  para modificar datos del post con el id especificado */}
                     <button 
-                        className="bg-yellow-600 text-sm px-2 py-1 rounded-sm hover:bg-green-500 "
-                        onClick={() => navigate(`/posts/${post._id}`)}
+                        className="bg-yellow-600 text-sm px-2 py-1 rounded-sm hover:bg-yellow-500 "
+                        onClick={() => navigate(`/dash/posts/${post._id}`)}
                     >
                         Editar
                     </button>
 
                     {/* Al pulsar Delete llama a la función handledelete que lanza el toast y completa la acción */}
                     <button 
-                        className="bg-red-600 text-sm px-2 py-1 rounded-sm hover:bg-indigo-500"
+                        className="bg-red-600 text-sm px-2 py-1 rounded-sm hover:bg-red-500"
                         onClick={(e) => {
                             e.stopPropagation()
                             handleDelete(post._id)
@@ -82,7 +82,7 @@ export function PostCard ({ post }) {
                 </div>                            
                 <p>{ post.description }</p>                   
             </div> 
-            <div className='hover:cursor-pointer transform hover:scale-[1.3] transition duration-500 ease-out hover:ease-in'>
+            <div className='hover:cursor-pointer transform hover:scale-[1.1] transition duration-400 ease-out hover:ease-in'>
                {post.image && <img src={post.image.url}  alt= "img" className="w-3/4 h-3/4 m-auto py-6" />}                  
             </div>                   
         </div>

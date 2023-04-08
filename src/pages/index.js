@@ -1,4 +1,4 @@
-export { HomePage } from './HomePage'
+export { PostsPage } from './PostsPage'
 export { PostFormPage } from './PostFormPage'
 export { NotFoundPage } from './NotFoundPage'
 export { LoginPage } from './LoginPage'

@@ -75,7 +75,7 @@ export function PostFormPage () {
             }
             // Al acabar de enviar se pasa a false para que no muestre la animación de carga de post
             actions.setSubmitting(false) 
-            navigate('/home')
+            navigate('/dash/posts')
           }}
 
           /* Controla si se tiene que restablecer el formulario si cambia initialValues

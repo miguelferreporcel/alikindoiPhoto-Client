@@ -16,8 +16,12 @@ import { PostCard } from "../components/PostsCard"
 // Importa ScrollToTop Componente que permite crear un acceso a la parte superior de las páginas 
 import ScrollToTop from "react-scroll-to-top"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faSquarePlus } from "@fortawesome/free-solid-svg-icons"
 
-export function HomePage () {
+
+
+export function PostsPage () {
 
   const { posts } = usePosts()
   
@@ -44,13 +48,13 @@ export function HomePage () {
   return (
     <div className="py-4">    
     {/* Cabecera de la página: Muestra número de posts y enlace a crear nuevo post*/}
-      <header className="flex justify-around sticky top-0 z-30 w-full">
+      <header className="flex justify-around sticky top-0 z-30 w-full border-b py-2">
         <h1 className="text-2xl text-gray-300 font-bold">Posts ({(posts.length)}) </h1>
         <Link 
-          to = '/new' 
-          className="px-2 py-2 bg-green-600 hover:bg-green-500 text-white rounded-md"
+          to = '/dash/new' 
+          className=" text-gray-300 text-xl font-bold rounded-md"
         >
-          Nuevo post
+        <FontAwesomeIcon icon={faSquarePlus} /> Nuevo post
         </Link>
       </header> 
 

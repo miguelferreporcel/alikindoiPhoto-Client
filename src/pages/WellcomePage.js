@@ -11,8 +11,8 @@ export function WellcomePage(){
         
       </div>
       <div className="text-white text-3xl font-bold">
-        <p><Link to="/posts">View Posts</Link></p>
-        <p><Link to="/users">View User Settings</Link></p>
+        <p><Link to="/dash/posts">View Posts</Link></p>
+        <p><Link to="/dash/users">View User Settings</Link></p>
       </div>
     </section>
     
