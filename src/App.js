@@ -11,13 +11,13 @@ function App() {
   
   return (
     <div className='bg-neutral-900 min-h-fit min-w-fit'>
-        <PostProvider>
-          <UserProvider>
+      <UserProvider>
+        <PostProvider>          
             <AppRouter />
             {/* Notificación en principio oculta */}
-            <Toaster />
-          </UserProvider>          
-        </PostProvider>      
+            <Toaster />                   
+        </PostProvider>
+      </UserProvider>      
     </div>    
   )
 }
