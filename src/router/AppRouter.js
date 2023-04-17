@@ -31,7 +31,7 @@ export const AppRouter = () => {
           <Route index element = { <WellcomePage />} />
           <Route path = 'posts' element = { <PostsPage />} />
           <Route path = 'admin' element = { <AdminPage />} />          
-          <Route path = 'new' element = { <PostFormPage />} />
+          <Route path = 'newPost' element = { <PostFormPage />} />
           <Route path = 'posts/:id' element = { <PostFormPage />} />
           <Route path = 'users' element = { <UsersPage />} />
           <Route path = 'newUser' element = { <UserFormPage />} />
