@@ -23,18 +23,21 @@ export function UserFormPage () {
   const [user, setUser] = useState({
     username: '',
     email: '',
-    password: ''
+    password: '',
+    roles: ''
   })
 
 /*   Si params contiene ID ejecutará getPost (obtener un único post) con el id indicado y lo guarda en el estado 'post' declarado en la límea 23 */
-  useEffect(() => {
-    (async() => {
-      if (params.id) {
-        const user = await getUser(params.id)
-        setUser(user)
-      }      
-    })()
-  }, [params.id])
+useEffect(() => {
+  (async() => {
+    if (params.id) {
+      const user = await getUser(params.id)
+/*       if(user.roles == "6425d92d0bef666a230851be") user.roles = "admin"
+      if(user.roles == "6425d92d0bef666a230851bc") user.roles = "user" */
+      setUser(user)
+    }      
+  })()
+}, [params.id])
 
   return (
     <div className='flex items-center justify-center min-h-screen'>
@@ -62,9 +65,11 @@ export function UserFormPage () {
               .required('El email es requerido')
               .email('Email no válido'),
             password: Yup.string()
-              .min(5, `Mínimo 5 caracteres`)
+              .min(5, `Mínimo 5 caracteres`) 
               .nullable(true)
-              .required('La contraseña es requerida')
+              .required('La contraseña es requerida'),
+            Roles: Yup.string()
+              /* .required('El rol es requerido') */
           })}
 
           /* Al enviar recibe values (valores introducidos) y actions(updatePosts, createPosts) 
@@ -129,6 +134,18 @@ export function UserFormPage () {
                     className = 'px-3 focus:outline-none rounded bg-gray-300 text-black w-full mb-5'
                   />
                   <ErrorMessage component="p" className='text-red-400 text-sm' name = 'password' />
+              <label  
+                htmlFor='roles'
+                className='text-sm block font-bold text-gray-400'
+              >
+                Rol
+              </label>
+                  <Field  name = 'roles' 
+                          type = 'text'
+                          placeholder = "user / admin" 
+                          className = 'px-3 focus:outline-none rounded bg-gray-300 text-black w-full mb-5'
+                  />
+                  <ErrorMessage component="p" className='text-red-400 text-sm' name = 'rol' />
               
               {/* Botón que envía el formulario, si está enviando muestra la animación de carga */}
               <button type = "submit" 

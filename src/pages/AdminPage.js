@@ -1,7 +1,18 @@
-export function AdminPage() {
+import { Link } from "react-router-dom"
+export function AdminPage(){
+  const date = new Date()
+    const today = new Intl.DateTimeFormat('es-ES', { dateStyle: 'full', timeStyle: 'long' }).format(date)
   return(
-    <div>
-      <h1 className="text-white text-3xl font-bold">AdminPage</h1>
-    </div>
+    <section className="min-h-screen">
+      <div className="text-white text-3xl font-bold">
+      
+      <h1>Welcome! {today}</h1>
+        
+      </div>
+      <div className="text-white text-3xl font-bold">
+        <p><Link to="/dash/users">View User Settings</Link></p>
+      </div>
+    </section>
+    
   )
 }

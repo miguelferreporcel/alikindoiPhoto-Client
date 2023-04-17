@@ -38,7 +38,7 @@ export function PostsPage () {
 
     return(
       /* Función que recorre y muestra los posts creados y guardados a partir de la clave _id*/
-      <div className="grid grid-cols-2 py-2 gap-4">
+      <div className="grid grid-cols-1 p-2 gap-4">
         {posts.map(post => (          
            <PostCard post = { post } key = { post._id } />
          ))}           
@@ -57,7 +57,7 @@ export function PostsPage () {
           ({(posts.length)}) 
         </h1>
         <Link 
-          to = '/dash/new' 
+          to = '/dash/newPost' 
           className=" text-gray-300 text-2xl font-bold rounded-md"
         >
         <FontAwesomeIcon icon={faSquarePlus} /> Nuevo post

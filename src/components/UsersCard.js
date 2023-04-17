@@ -79,12 +79,25 @@ export function UsersCard ({ user }) {
                         <FontAwesomeIcon icon={faTrash} /> Eliminar
                     </button>
                 </div> 
-                 <div className="flex justify-start">
-                    <h3>
-                       { user.username } 
-                    </h3>
-                </div>                            
-                <p>{ user.email }</p>                   
+                 
+                    <div className='flex text-m font-bold text-gray-400'>
+                      Nombre--
+                      <p className=' font-semibold text-white break-all'>
+                       { user.username } </p>
+                    </div>
+                                          
+                <div className='flex flex-wrap text-m font-bold text-gray-400'>
+                    Email-- <p className='font-semibold text-white break-all '>
+                    { user.email }</p>
+                </div> 
+                <div className='flex flex-wrap text-m font-bold text-gray-400'>
+                    Rol-- <p className=' font-semibold text-white break-all'>
+                    { user.roles }</p>
+                </div> 
+                <div className='flex flex-wrap text-m font-bold text-gray-400'>
+                    Posts-- <p className=' font-semibold text-white break-all'>
+                    { user.posts }</p>
+                </div>                  
             </div>                  
         </div>
     )

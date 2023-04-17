@@ -13,7 +13,7 @@ export function DashFooter() {
     if (pathname !== '/wellcome') {
         goHomeButton = (
             <button
-                className="w-auto font-medium h-auto"
+                className="w-auto font-medium h-auto text-xl sticky bottom-0"
                 title="Home"
                 onClick={onGoHomeClicked}
             >
@@ -23,7 +23,7 @@ export function DashFooter() {
     }
 
   return(
-    <div className="font-medium sticky bottom-0  text-white flex flex-nowrap justify-start px-4 py-4 gap-10">
+    <div className="font-medium sticky bottom-0  text-white text-xl flex flex-nowrap justify-start px-4 py-4 gap-10">
       {goHomeButton}
       <p><FontAwesomeIcon icon={faUserLarge}  /> Current User:</p>
     </div>

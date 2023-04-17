@@ -3,7 +3,7 @@ import Logo  from '../assets/logo.gif'
 
 export function DashHeader() {
   return(
-    <nav className="flex items-center justify-center flex-wrap bg-gray-800 p-3 border-b">
+    <nav className="flex items-center justify-center flex-wrap bg-gray-800 p-3 border-b sticky top-0">
       <div className="flex items-center flex-shrink-0 text-white mr-20">
         <img src={Logo} width = "70px" alt="logo" />
         <span className="font-bold  text-2xl tracking-tight">alikindoiPhoto</span>
@@ -13,7 +13,7 @@ export function DashHeader() {
           <Link className="mr-10" to='/login'>Login </Link>
           <Link className="mr-10" to='/logout'>Logout </Link>
           <Link className="mr-10" to='/links'>Links </Link>
-          <Link to='/admin'>Admin </Link>
+          <Link className="mr-10" to='/dash/admin'>Admin </Link>
         </div>
       </div>
     </nav>

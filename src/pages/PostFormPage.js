@@ -43,7 +43,7 @@ export function PostFormPage () {
           <h3 className='text-xl'>
             Post
           </h3>
-          <Link to= '/home' className='bg-red-700 text-white font-bold hover:bg-red-500 px-2 py-2'>
+          <Link to= '/dash/posts' className='bg-red-700 text-white font-bold hover:bg-red-500 px-2 py-2'>
             Cancelar
           </Link>
         </header>
