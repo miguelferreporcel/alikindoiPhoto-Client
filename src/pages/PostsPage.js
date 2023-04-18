@@ -58,7 +58,7 @@ export function PostsPage () {
         </h1>
         <Link 
           to = '/dash/newPost' 
-          className=" text-gray-300 text-2xl font-bold rounded-md"
+          className=" text-gray-300 text-2xl font-bold rounded-md hover:shadow-lg hover:shadow-white/70"
         >
         <FontAwesomeIcon icon={faSquarePlus} /> Nuevo post
         </Link>

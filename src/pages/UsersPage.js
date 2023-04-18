@@ -37,7 +37,7 @@ export function UsersPage () {
       /* Función que recorre y muestra los posts creados y guardados a partir de la clave _id*/
       <div className="grid grid-cols-2 py-2 gap-4">
         {users.map(user => (          
-           <UsersCard user = { user } key = { user._id } />
+           <UsersCard user = { user } key = { Math.random() } />
          ))}           
       </div>
     )      
@@ -55,7 +55,7 @@ export function UsersPage () {
         </h1>
         <Link 
           to = '/dash/newUser' 
-          className=" text-gray-300 text-2xl font-bold rounded-md"
+          className=" text-gray-300 text-2xl font-bold rounded-md hover:shadow-lg hover:shadow-white/70"
         >
         <FontAwesomeIcon icon={faSquarePlus} /> Nuevo Usuario
         </Link>

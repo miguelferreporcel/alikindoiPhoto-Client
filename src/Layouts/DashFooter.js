@@ -13,7 +13,7 @@ export function DashFooter() {
     if (pathname !== '/wellcome') {
         goHomeButton = (
             <button
-                className="w-auto font-medium h-auto text-xl sticky bottom-0"
+                className="w-auto font-medium h-auto text-xl sticky bottom-0 hover:shadow-lg hover:shadow-white/70"
                 title="Home"
                 onClick={onGoHomeClicked}
             >

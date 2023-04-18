@@ -62,7 +62,7 @@ export function PostCard ({ post }) {
 
                     {/* Al pulsar edit reditige a posts y muestra (reutiliza) el formulario de crear post  para modificar datos del post con el id especificado */}
                     <button 
-                        className="bg-yellow-600 text-sm px-2 py-1 rounded-sm hover:bg-yellow-500 "
+                        className="bg-yellow-600 text-sm px-2 py-1 rounded-sm hover:shadow-lg hover:shadow-white/70"
                         onClick={() => navigate(`/dash/posts/${post._id}`)}
                     >
                         <FontAwesomeIcon icon={faPenToSquare} /> Editar
@@ -70,7 +70,7 @@ export function PostCard ({ post }) {
 
                     {/* Al pulsar Delete llama a la función handledelete que lanza el toast y completa la acción */}
                     <button 
-                        className="bg-red-600 text-sm px-2 py-1 rounded-sm hover:bg-red-500"
+                        className="bg-red-600 text-sm px-2 py-1 rounded-sm hover:shadow-lg hover:shadow-white/70"
                         onClick={(e) => {
                             e.stopPropagation()
                             handleDelete(post._id)
