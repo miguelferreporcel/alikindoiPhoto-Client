@@ -86,7 +86,7 @@ export function PostCard ({ post }) {
                 </div>                            
                 <p>{ post.description }</p>                   
             </div> 
-            <div className='hover:cursor-pointer transform hover:scale-[1.1] transition duration-400 ease-out hover:ease-in'>
+            <div className='hover:cursor-pointer '>
                {post.image && <img src={post.image.url}  alt= "img" className="w-3/4 h-3/4 m-auto py-6" />}                  
             </div>                   
         </div>

@@ -23,9 +23,8 @@ export function DashFooter() {
     }
 
   return(
-    <div className="font-medium sticky bottom-0  text-white text-xl flex flex-nowrap justify-start px-4 py-4 gap-10">
+    <div className="font-medium sticky bottom-0  text-white text-xl flex flex-nowrap justify-center gap-10">
       {goHomeButton}
-      <p><FontAwesomeIcon icon={faUserLarge}  /> Current User:</p>
     </div>
   )
 }

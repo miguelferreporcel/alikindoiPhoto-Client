@@ -49,16 +49,16 @@ export function PostsPage () {
   return (
     <div className="py-4">    
     {/* Cabecera de la página: Muestra número de posts y enlace a crear nuevo post*/}
-      <header className="flex justify-around sticky top-0 z-30 w-full py-2">
+      <header className="flex justify-around w-full py-2">
         <h1 
-          className="text-2xl text-gray-300 font-bold"
+          className="text-xl text-gray-300 font-semibold"
         >
           <FontAwesomeIcon icon={faImage} /> Posts 
           ({(posts.length)}) 
         </h1>
         <Link 
           to = '/dash/newPost' 
-          className=" text-gray-300 text-2xl font-bold rounded-md hover:shadow-lg hover:shadow-white/70"
+          className=" text-gray-300 text-xl font-semibold rounded-md hover:shadow-lg hover:shadow-white/70"
         >
         <FontAwesomeIcon icon={faSquarePlus} /> Nuevo post
         </Link>

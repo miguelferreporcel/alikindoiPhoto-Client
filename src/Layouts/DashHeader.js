@@ -6,10 +6,10 @@ import { Transition } from "@headlessui/react";
 export function DashHeader() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div>
-      <nav className="bg-gray-800 sticky top-0">
+    <div className="sticky top-0 z-30">
+      <nav className="bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-center h-16">
             <div className="flex items-center">
               <Link className="flex-shrink-0 text-white flex items-center m-10">
                 <img
@@ -43,7 +43,7 @@ export function DashHeader() {
                   <Link
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md 
                               font-semibold  text-xl"
-                    to='/links'
+                    to='/dash/links'
                   >
                     Links
                   </Link>

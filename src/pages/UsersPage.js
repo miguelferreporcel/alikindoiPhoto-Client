@@ -46,7 +46,7 @@ export function UsersPage () {
   return (
     <div className="py-4">    
     {/* Cabecera de la página: Muestra número de posts y enlace a crear nuevo post*/}
-      <header className="flex justify-around sticky top-0 z-30 w-full py-2">
+      <header className="flex justify-around w-full py-2">
         <h1 
           className="text-2xl text-gray-300 font-bold"
         >

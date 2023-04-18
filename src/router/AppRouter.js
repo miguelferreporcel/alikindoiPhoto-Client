@@ -28,9 +28,10 @@ export const AppRouter = () => {
         <Route index element = {<PublicPage />} />
         <Route path = 'login' element = { <LoginPage />} />
         <Route path = 'logout' element = { <LogoutPage />} />
-        <Route path = 'links' element = { <LinksPage />} />
+        
         <Route path = '/dash' element = { <DashLayout />}>
           <Route index element = { <WellcomePage />} />
+          <Route path = 'links' element = { <LinksPage />} />
           <Route path = 'posts' element = { <PostsPage />} />
           <Route path = 'admin' element = { <AdminPage />} />          
           <Route path = 'newPost' element = { <PostFormPage />} />
