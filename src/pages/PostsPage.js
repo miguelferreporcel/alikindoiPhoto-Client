@@ -38,7 +38,7 @@ export function PostsPage () {
       <div className="grid grid-cols-2 p-2 gap-4">
         {posts.map(post => (          
            <PostCard post = { post } key = { post._id } />
-         ))}           
+        ))}          
       </div>
     )      
   }

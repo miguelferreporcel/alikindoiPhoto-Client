@@ -11,7 +11,8 @@ import {
   UserFormPage, 
   AdminPage,
   LinksPage,
-  AccountPage
+  AccountPage,
+  RequireAuth
 } from '../pages'
 import { Layout } from '../layouts/Layout'
 import { DashLayout } from '../layouts/DashLayout'
@@ -31,6 +32,7 @@ export const AppRouter = () => {
         <Route index element = {<PublicPage />} />
         <Route path = 'login' element = { <LoginPage />} />
         <Route path = 'logout' element = { <LogoutPage />} />
+        
         
         <Route path = '/dash' element = { <DashLayout />}>
           <Route index element = { <WellcomePage />} />

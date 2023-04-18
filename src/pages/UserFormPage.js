@@ -146,6 +146,8 @@ useEffect(() => {
                           className = 'px-3 focus:outline-none rounded bg-gray-300 text-black w-full mb-5'
                   />
                   <ErrorMessage component="p" className='text-red-400 text-sm' name = 'rol' />
+                  <h2 className='text-gray-400'>_id:"6425d92d0bef666a230851be", name:"admin"</h2>
+                  <h2 className='text-gray-400'>_id:"6425d92d0bef666a230851bc", name:"user"</h2>
               
               {/* Botón que envía el formulario, si está enviando muestra la animación de carga */}
               <button type = "submit" 
