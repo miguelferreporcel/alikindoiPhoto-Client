@@ -26,5 +26,6 @@ export function DashFooter() {
     <div className="font-medium sticky bottom-0  text-white text-xl flex flex-nowrap justify-center gap-10">
       {goHomeButton}
     </div>
+    
   )
 }

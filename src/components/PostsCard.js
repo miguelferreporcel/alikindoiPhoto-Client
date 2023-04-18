@@ -10,9 +10,20 @@ import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { useState } from 'react'
 
 // Función que recibe un objeto post para poder mostrarlo (post.title, post.description...)
 export function PostCard ({ post }) {
+
+  const [showImage, setShowImage] = useState(false);
+
+  const handleClickImage = () => {
+    setShowImage(true);
+  };
+
+  const handleClose = () => {
+    setShowImage(false);
+  };
 
     // Función importada del contexto
     const { deletePost } = usePosts() 
@@ -54,6 +65,8 @@ export function PostCard ({ post }) {
         })
     }
 
+    const [isOpen, setIsOpen] = useState(false);
+
     
     return (
         <div className="bg-gray-800 text-white rounded-sm shadow-md shadow-black hover:bg-zinc-700">
@@ -86,9 +99,21 @@ export function PostCard ({ post }) {
                 </div>                            
                 <p>{ post.description }</p>                   
             </div> 
+            
             <div className='hover:cursor-pointer '>
-               {post.image && <img src={post.image.url}  alt= "img" className="w-3/4 h-3/4 m-auto py-6" />}                  
-            </div>                   
+               {post.image && <img src={post.image.url}  alt= "img" className="w-3/4 h-3/4 m-auto py-6" 
+                    onClick={handleClickImage}/>}                             
+            </div>
+            
+            {showImage && (
+                <div
+                    className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-100 flex justify-center items-center"
+                    onClick={handleClose}
+                >
+                    <img src={post.image.url} alt="img" className="max-w-full max-h-full" />
+                </div>
+            )}
+                               
         </div>
     )
 }
