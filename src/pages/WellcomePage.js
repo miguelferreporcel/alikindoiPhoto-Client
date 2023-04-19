@@ -1,20 +1,24 @@
-import { Link } from "react-router-dom"
-// Función del contexto
-import { useUsers } from '../context/userContext'
+import { useNavigate, Link } from "react-router-dom"
+import { useContext } from "react"
+import authContext from "../context/authContext" 
 
-// Módulo para la navegación entre páginas de la aplicación
-import { useNavigate } from 'react-router-dom' 
-
-export function WellcomePage({ user }){
+export function WellcomePage(){
   const date = new Date()
   const today = new Intl.DateTimeFormat('es-ES', { dateStyle: 'full', timeStyle: 'long' }).format(date)
-  const { users } = useUsers()
-  
+  const { setAuth } = useContext(authContext);
+  const navigate = useNavigate();
+  const logout = async () => {
+    // if used in more components, this should be in context 
+    // axios to /logout endpoint 
+    setAuth({});
+    navigate('/login');
+}
   return(
     <section className="min-h-screen">
       <div className="text-white text-3xl font-bold">
       
-      <h1>Welcome! {today}</h1>
+      <h1>Welcome!</h1>
+      <h1>{today}</h1>
         
       </div>
       <div className="text-white text-3xl font-bold">
@@ -23,6 +27,10 @@ export function WellcomePage({ user }){
       <div className="text-white text-3xl font-bold">
         <p><Link to="/dash/account/">Profile</Link></p>
       </div>
+      <div className="text-white text-3xl font-bold">
+        <button onClick={logout}>Sign Out</button>
+      </div>
+
     </section>
     
   )

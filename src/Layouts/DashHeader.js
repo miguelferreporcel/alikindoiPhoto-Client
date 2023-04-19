@@ -32,13 +32,13 @@ export function DashHeader() {
                     Login
                   </Link> */}
 
-                  <Link
+                  {/* <Link
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md 
                               font-semibold  text-xl"
                     to='/logout'
                   >
                     Logout
-                  </Link>
+                  </Link> */}
 
                   <Link
                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md 
