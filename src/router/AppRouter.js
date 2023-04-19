@@ -11,12 +11,12 @@ import {
   UserFormPage, 
   AdminPage,
   LinksPage,
-  AccountPage,
-  RequireAuth
+  AccountPage
 } from '../pages'
+
 import { Layout } from '../layouts/Layout'
 import { DashLayout } from '../layouts/DashLayout'
-
+import RequireAuth from '../pages/RequireAuth'
 
 // Importa Componentes Routes y Route para definir y crear rutas
 import { Routes, Route } from 'react-router-dom'
@@ -33,21 +33,22 @@ export const AppRouter = () => {
         <Route path = 'login' element = { <LoginPage />} />
         <Route path = 'logout' element = { <LogoutPage />} />
         
-        
-        <Route path = '/dash' element = { <DashLayout />}>
-          <Route index element = { <WellcomePage />} />
-          <Route path = 'links' element = { <LinksPage />} />
-          <Route path = 'posts' element = { <PostsPage />} />
-          <Route path = 'admin' element = { <AdminPage />} />
-          <Route path = 'account' element = { <AccountPage />} />            
-          <Route path = 'newPost' element = { <PostFormPage />} />
-          <Route path = 'posts/:id' element = { <PostFormPage />} />
-          <Route path = 'users' element = { <UsersPage />} />
-          <Route path = 'newUser' element = { <UserFormPage />} />
-          <Route path = 'users/:id' element = { <UserFormPage />} /> 
-        </Route>
+        <Route element = { <RequireAuth />}>
+          <Route path = '/dash' element = { <DashLayout />}>
+            <Route index element = { <WellcomePage />} />
+            <Route path = 'links' element = { <LinksPage />} />
+            <Route path = 'posts' element = { <PostsPage />} />
+            <Route path = 'admin' element = { <AdminPage />} />
+            <Route path = 'account' element = { <AccountPage />} />            
+            <Route path = 'newPost' element = { <PostFormPage />} />
+            <Route path = 'posts/:id' element = { <PostFormPage />} />
+            <Route path = 'users' element = { <UsersPage />} />
+            <Route path = 'newUser' element = { <UserFormPage />} />
+            <Route path = 'users/:id' element = { <UserFormPage />} /> 
+          </Route>
+        </Route>        
       </Route>
-      <Route path = '*' element = { <NotFoundPage />} />     
+      <Route path = '*' element = { <NotFoundPage />} />    
 
     </Routes>
   )

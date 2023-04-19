@@ -2,7 +2,6 @@ import Logo  from '../assets/logo.gif'
 import showPwdImg from '../assets/showPassword.svg'
 import hidePwdImg from '../assets/hidePassword.svg'
 import { useState } from 'react'
-import { useAuth } from '../hooks/useAuth'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
@@ -10,7 +9,10 @@ import { faLock } from "@fortawesome/free-solid-svg-icons"
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons"
 import { faRectangleXmark } from "@fortawesome/free-solid-svg-icons"
 import { faBell } from "@fortawesome/free-solid-svg-icons"
+import useAuth from '../hooks/useAuth'
 import axios from 'axios'
+import authContext from '../context/authContext'
+
 
 export function LoginPage() {  
   const { setAuth } = useAuth()
