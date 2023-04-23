@@ -11,7 +11,8 @@ import {
   UserFormPage, 
   AdminPage,
   LinksPage,
-  AccountPage
+  AccountPage,
+  UnauthorizedPage
 } from '../pages'
 
 import { Layout } from '../layouts/Layout'
@@ -31,20 +32,34 @@ export const AppRouter = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<PublicPage />} />
         <Route path="login" element={<LoginPage />} />
+        <Route path="unauthorized" element={<UnauthorizedPage />} />
 
-        <Route element={<RequireAuth />}>
+        <Route
+          element={
+            <RequireAuth
+              allowedRoles={[
+                "6425d92d0bef666a230851bc", "6425d92d0bef666a230851be",
+              ]}
+            />
+          }
+        >
           <Route path="/dash" element={<DashLayout />}>
             <Route index element={<WellcomePage />} />
             <Route path="links" element={<LinksPage />} />
             <Route path="posts" element={<PostsPage />} />
-            <Route path="admin" element={<AdminPage />} />
             <Route path="account" element={<AccountPage />} />
             <Route path="newPost" element={<PostFormPage />} />
             <Route path="posts/:id" element={<PostFormPage />} />
-            <Route path="users" element={<UsersPage />} />
-            <Route path="newUser" element={<UserFormPage />} />
-            <Route path="users/:id" element={<UserFormPage />} />
           </Route>
+        </Route>
+
+        <Route
+          element={<RequireAuth allowedRoles={["6425d92d0bef666a230851be"]} />}
+        >
+          <Route path="admin" element={<AdminPage />} />
+          <Route path="users" element={<UsersPage />} />
+          <Route path="newUser" element={<UserFormPage />} />
+          <Route path="users/:id" element={<UserFormPage />} />
         </Route>
       </Route>
       <Route path="*" element={<NotFoundPage />} />
