@@ -18,6 +18,7 @@ import {
 import { Layout } from '../layouts/Layout'
 import { DashLayout } from '../layouts/DashLayout'
 import RequireAuth from '../components/RequireAuth'
+import RequireAdmin from '../components/RequireAdmin'
 
 // Importa Componentes Routes y Route para definir y crear rutas
 import { Routes, Route } from 'react-router-dom'
@@ -34,15 +35,7 @@ export const AppRouter = () => {
         <Route path="login" element={<LoginPage />} />
         <Route path="unauthorized" element={<UnauthorizedPage />} />
 
-        <Route
-          element={
-            <RequireAuth
-              allowedRoles={[
-                "6425d92d0bef666a230851bc", "6425d92d0bef666a230851be",
-              ]}
-            />
-          }
-        >
+        <Route element={<RequireAuth />}>
           <Route path="/dash" element={<DashLayout />}>
             <Route index element={<WellcomePage />} />
             <Route path="links" element={<LinksPage />} />
@@ -50,19 +43,31 @@ export const AppRouter = () => {
             <Route path="account" element={<AccountPage />} />
             <Route path="newPost" element={<PostFormPage />} />
             <Route path="posts/:id" element={<PostFormPage />} />
-          </Route>
-        </Route>
 
-        <Route
-          element={<RequireAuth allowedRoles={["6425d92d0bef666a230851be"]} />}
-        >
-          <Route path="admin" element={<AdminPage />} />
-          <Route path="users" element={<UsersPage />} />
-          <Route path="newUser" element={<UserFormPage />} />
-          <Route path="users/:id" element={<UserFormPage />} />
+            
+              <Route path="admin" element={<AdminPage />} />
+              <Route path="users" element={<UsersPage />} />
+              <Route path="newUser" element={<UserFormPage />} />
+              <Route path="users/:id" element={<UserFormPage />} />
+            
+          </Route>
         </Route>
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 }
+
+
+/**
+ * <Route
+              element={
+                <RequireAdmin allowedRoles={[{_id:"6425d92d0bef666a230851be",name:"admin"}]} />
+              }
+            >
+              <Route path="admin" element={<AdminPage />} />
+              <Route path="users" element={<UsersPage />} />
+              <Route path="newUser" element={<UserFormPage />} />
+              <Route path="users/:id" element={<UserFormPage />} />
+            </Route>
+ */

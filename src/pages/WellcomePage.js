@@ -11,7 +11,7 @@ export function WellcomePage(){
     // if used in more components, this should be in context 
     // axios to /logout endpoint 
     setAuth({});
-    navigate('/login');
+    navigate('/');
 }
   return(
     <section className="min-h-screen">
