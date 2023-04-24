@@ -49,6 +49,7 @@ export function LoginPage() {
       } else if (err.response?.status === 401) {
           setErrMsg('* Email y/o Password incorrectos');
       } else {
+        console.log(err)
         setErrMsg('Login Fallido');
       }
     }     
