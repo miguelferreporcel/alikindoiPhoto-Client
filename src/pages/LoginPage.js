@@ -34,7 +34,7 @@ export function LoginPage() {
         }
       )
       const accessToken = JSON.stringify(resData?.data?.accessToken)
-      const roles = JSON.stringify(resData?.data?.userFound.roles)
+      const roles = JSON.stringify(resData?.data?.roles)
       console.log('ACCESS_TOKEN: ' + accessToken + ' ROLES: ' + roles)
       setAuth({email, password, roles, accessToken})      
       setEmail('')
