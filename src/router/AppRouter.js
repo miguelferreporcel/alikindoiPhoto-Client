@@ -50,6 +50,7 @@ export const AppRouter = () => {
               <Route path="newUser" element={<UserFormPage />} />
               <Route path="users/:id" element={<UserFormPage />} />
             
+
           </Route>
         </Route>
       </Route>
@@ -60,9 +61,9 @@ export const AppRouter = () => {
 
 
 /**
- * <Route
+ *          <Route
               element={
-                <RequireAdmin allowedRoles={[{_id:"6425d92d0bef666a230851be",name:"admin"}]} />
+                <RequireAdmin allowedRoles={["admin"]} />
               }
             >
               <Route path="admin" element={<AdminPage />} />
