@@ -20,7 +20,6 @@ export function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errMsg, setErrMsg] = useState("");
-    const [success, setSuccess] = useState(false);
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -36,13 +35,11 @@ export function LoginPage() {
         
         const accessToken = resData?.data?.accessToken;
         const roles = resData?.data?.roles;
-        console.log("Desde Login: ACCESS_TOKEN: " + accessToken + "/ ROLES: " + roles + ' FROM: ' + from);
         setAuth({ email, password, roles, accessToken });
         setEmail("");
         setPassword("");
         setErrMsg("");
-        /* setSuccess(true) */
-        navigate(from, { replace: true });
+        navigate(/* from, { replace: true } */ "/dash");
         } catch (err) {
         if (err.response?.status === 400) {
             setErrMsg("* Email y/o Password incorrectos");
@@ -58,10 +55,6 @@ export function LoginPage() {
     const [isRevealPassword, setIsRevealPassword] = useState(false);
 
     return (
-        /*   <>
-        {success ? (
-        navigate('/dash')
-        ) : ( */
         <div className="flex items-center justify-center min-h-screen">
             <div className=" bg-white rounded-lg shadow dark:border dark:bg-zinc-800 dark:border-gray-700">
                 <div className="p-6 space-y-4 md:space-y-3 sm:p-10">
@@ -177,7 +170,5 @@ export function LoginPage() {
                 </div>
             </div>
         </div>
-    ); /* }
-    </>    
-    ) */
+    )
 }

@@ -1,6 +1,6 @@
 import { useNavigate, Link } from "react-router-dom"
 import { useContext } from "react"
-import authContext from "../context/authContext" 
+import authContext from "../context/AuthProvider" 
 
 export function WellcomePage(){
   const date = new Date()

@@ -91,7 +91,7 @@ export function UsersCard ({ user }) {
                     { user.email }</p>
                 </div> 
                 <div className='flex flex-wrap text-m font-bold text-gray-400'>
-                    Rol-- <p className=' font-semibold text-white break-all'>
+                    Roles-- <p className=' font-semibold text-white break-all'>
                     { user.roles }</p>
                 </div> 
                 <div className='flex flex-wrap text-m font-bold text-gray-400'>
