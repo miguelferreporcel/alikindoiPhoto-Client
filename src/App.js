@@ -16,7 +16,6 @@ function App() {
         <UserProvider>
           <PostProvider>          
             <AppRouter />
-            {/* Notificación en principio oculta */}
             <Toaster />                   
           </PostProvider>
         </UserProvider>   

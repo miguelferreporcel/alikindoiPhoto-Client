@@ -1,15 +1,15 @@
 import { createContext, useState } from "react";
 
-const AuthContext = createContext({});
+const authContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
     const [auth, setAuth] = useState({})
-
+    console.log('Desde AuthProvider', auth)
     return (
-        <AuthContext.Provider value={{ auth, setAuth }}>
+        <authContext.Provider value={{ auth, setAuth }}>
             {children}
-        </AuthContext.Provider>
+        </authContext.Provider>
     )
 }
 
-export default AuthContext
+export default authContext
