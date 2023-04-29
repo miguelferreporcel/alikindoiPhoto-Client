@@ -1,4 +1,5 @@
-/* import useAuth from "../hooks/useAuth";
+import useAuth from "../hooks/useAuth";
+
 const AuthHeader = () => {
   const { auth } = useAuth();
 
@@ -16,4 +17,4 @@ const AuthHeader = () => {
   
 };
 
-export default AuthHeader; */
+export default AuthHeader;

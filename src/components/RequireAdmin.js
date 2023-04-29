@@ -5,8 +5,13 @@ const RequireAdmin = ({allowedRoles}) => {
   const { auth } = useAuth();
   const location = useLocation();
     const authRoles = [auth?.roles];
-    console.log("AUTH.ROLES: " + authRoles);
-    console.log("ALLOWED_ROLES: " + allowedRoles)
+    console.log(
+        "RequireAdmin - auth.roles:",
+        auth.roles,
+        "allowedRoles:",
+        allowedRoles
+    );
+
     const rolesFound = false
     if (authRoles?.find((role) => allowedRoles?.includes(role))) {
         rolesFound = true;

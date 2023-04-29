@@ -32,9 +32,22 @@ export function LoginPage() {
                 withCredentials: true,
             }
         );
-        
+            
+        const resDataMessage = resData?.data?.message;
         const accessToken = resData?.data?.accessToken;
+        const resDataEmail = resData?.data?.email;
         const roles = resData?.data?.roles;
+        console.log(
+            "MESSAGE: ",
+            resDataMessage,
+            "/ACCESTOKEN",
+            accessToken,
+            "/EMAIL",
+            resDataEmail,
+            "/ROLES",
+            roles
+        );
+                
         setAuth({ email, password, roles, accessToken });
         setEmail("");
         setPassword("");
