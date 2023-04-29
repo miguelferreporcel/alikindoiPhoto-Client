@@ -39,11 +39,11 @@ export function UsersPage () {
         {users.map(user => (          
            <UsersCard user = { user } key = { Math.random() } />
         ))}
-        <div className="border-2 items-center text-center bg-gray-800 grid grid-cols-1">
+        {/* <div className="border-2 items-center text-center bg-gray-800 grid grid-cols-1">
           <h1 className='text-gray-300'>Roles</h1>
           <h2 className='text-gray-300'>"6425d92d0bef666a230851be" = "admin"</h2>
           <h2 className='text-gray-300'>"6425d92d0bef666a230851bc" = "user"</h2>  
-        </div>
+        </div> */}
                   
       </div>
     )      
