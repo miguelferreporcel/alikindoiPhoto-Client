@@ -99,13 +99,13 @@ export function UsersCard({ user }) {
                 <div className="flex flex-wrap text-m font-bold text-gray-400">
                     Roles--{" "}
                     <p className=" font-semibold text-white break-all">
-                        {user.roles.join(" / ")}
+                        {user.roles?.join(" / ")}
                     </p>
                 </div>
                 <div className="flex flex-wrap text-m font-bold text-gray-400">
                     Posts--{" "}
                     <p className=" font-semibold text-white break-all">
-                        {user.posts}
+                        {user.posts?.join(" / ")}
                     </p>
                 </div>
             </div>
